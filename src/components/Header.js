@@ -3,7 +3,7 @@
 function Header() {
   return (
     <header className="App-header">
-      <h1>Siam Spice</h1>
+      <h1>Siam Spiceafsafsaafs</h1>
     </header>
   );
 }
