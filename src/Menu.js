@@ -1,26 +1,57 @@
-// src/Menu.js
+// src/components/Menu.js
+
+import menuData from '../menuData';       // Import our menu data
+import MenuItem from './MenuItem';       // Import our new single item component
+
 function Menu() {
+  // We'll filter the data to get a list of just the appetizers
+  const appetizers = menuData.filter(item => item.category === 'Appetizer');
+  const mainDishes = menuData.filter(item => item.category === 'Main Dish');
+  const drinks = menuData.filter(item => item.category === 'Drink');
+
   return (
-    <main>
-      <section className="menu-section">
-        <h2>Our Menu</h2>
-        <div className="menu-item">
-          <h3>Pad Thai</h3>
-          <p>The classic Thai noodle dish with shrimp, tofu, and peanuts.</p>
-          <strong>$14.99</strong>
-        </div>
-        <div className="menu-item">
-          <h3>Green Curry</h3>
-          <p>Spicy and aromatic curry with chicken and Thai eggplant.</p>
-          <strong>$15.99</strong>
-        </div>
-        <div className="menu-item">
-          <h3>Tom Yum Soup</h3>
-          <p>Hot and sour soup with lemongrass, galangal, and mushrooms.</p>
-          <strong>$8.99</strong>
-        </div>
-      </section>
-    </main>
+    <div className="menu-section">
+
+      <h2>Appetizers</h2>
+      {/* 
+        .map() is a magical function for lists. 
+        It goes through each 'item' in our 'appetizers' list 
+        and turns it into a <MenuItem> component.
+      */}
+      {appetizers.map(item => (
+        <MenuItem 
+          key={item.id} // React needs a unique 'key' for lists
+          image={item.image}
+          name={item.name}
+          description={item.description}
+          price={item.price}
+        />
+      ))}
+
+      <h2>Main Dishes</h2>
+      {mainDishes.map(item => (
+        <MenuItem 
+          key={item.id}
+          image={item.image}
+          name={item.name}
+          description={item.description}
+          price={item.price}
+        />
+      ))}
+
+      <h2>Drinks</h2>
+      {drinks.map(item => (
+        <MenuItem 
+          key={item.id}
+          image={item.image}
+          name={item.name}
+          description={item.description}
+          price={item.price}
+        />
+      ))}
+      
+    </div>
   );
 }
+
 export default Menu;

@@ -31,26 +31,14 @@ main {
   padding: 20px;
 }
 
-.menu-section {
-  max-width: 800px;
-  margin: 40px auto;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.menu-section h2 {
-  color: #a73a24;
-  font-size: 2.5rem;
-  border-bottom: 2px solid #f0f0f0;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
+/* Replace the old .menu-item styles with these */
 
 .menu-item {
+  display: flex; /* This is the magic! It makes items line up side-by-side */
+  align-items: center; /* This vertically centers the text with the image */
+  gap: 20px; /* This adds space between the image and the text */
   border-bottom: 1px solid #eee;
-  padding: 15px 0;
+  padding: 20px 0;
   text-align: left;
 }
 
@@ -58,19 +46,30 @@ main {
   border-bottom: none;
 }
 
-.menu-item h3 {
+.menu-item-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover; /* This makes sure the image covers the area without stretching */
+  border-radius: 8px;
+}
+
+.menu-item-text {
+  flex-grow: 1; /* This makes the text area take up the remaining space */
+}
+
+.menu-item-text h3 {
   margin: 0 0 5px 0;
   color: #333;
 }
 
-.menu-item p {
+.menu-item-text p {
   margin: 0;
   color: #666;
 }
 
-.menu-item strong {
+.menu-item-price {
   color: #d48c2a;
-  float: right;
+  font-size: 1.1rem;
 }
 
 .footer {
@@ -78,4 +77,3 @@ main {
   color: #fff;
   padding: 20px;
   margin-top: 40px;
-}

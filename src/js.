@@ -1,0 +1,26 @@
+// src/components/Menu.js
+
+function Menu() {
+  return (
+    <div className="menu-section">
+      <h2>Our Menu</h2>
+      <div className="menu-item">
+        <h3>Pad Thai</h3>
+        <p>Stir-fried rice noodles with shrimp, tofu, peanuts, and bean sprouts.</p>
+        <p><strong>$14.99</strong></p>
+      </div>
+      <div className="menu-item">
+        <h3>Green Curry</h3>
+        <p>Spicy green curry with chicken, bamboo shoots, and basil in coconut milk.</p>
+        <p><strong>$15.99</strong></p>
+      </div>
+      <div className="menu-item">
+        <h3>Tom Yum Soup</h3>
+        <p>Hot and sour soup with shrimp, mushrooms, lemongrass, and galangal.</p>
+        <p><strong>$7.99</strong></p>
+      </div>
+    </div>
+  );
+}
+
+export default Menu;
